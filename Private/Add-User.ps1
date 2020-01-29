@@ -41,10 +41,12 @@ function Add-User {
         $UsageLocation
     )
 
-    # Common user account password
+    # Common user password profile
     $CommonPwd = "AweS0me@PW" 
     $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     $PasswordProfile.Password = $CommonPwd
+    $PasswordProfile.EnforceChangePasswordPolicy = $false
+    $PasswordProfile.ForceChangePasswordNextLogin = $false
     
     # Create object containing random first and last name combinations
     $ObjNames = Invoke-RandomUserName -UserCount $UserCount
