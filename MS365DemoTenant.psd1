@@ -51,7 +51,7 @@ Description = 'Configures an existing tenant for demo purposes. Includes rich, d
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('AzureAD','MSOnline')
+RequiredModules = @('AzureAD','MSOnline','Microsoft.Online.SharePoint.PowerShell')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
