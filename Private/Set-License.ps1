@@ -1,24 +1,21 @@
 function Set-License {
     <#
     .SYNOPSIS
-        Short description
+        Adds license for a user.
     .DESCRIPTION
-        Long description
+        Adds license for a user.
     .PARAMETER UserUPN
         Specifies the ID (as UPN) of a user in Azure AD.
     .PARAMETER License
         Select the licensing plan for your tenant. 
         After creating your Office 365 E5 and Microsoft 365 E5 trial subscription you would be able choose between SPE_E5 and ENTERPRISEPREMIUM. 
-        Default is SPE_E5 as it includes the ENTERPRISEPREMIUM license plan.
     .EXAMPLE
-        PS C:\> <example usage>
-        Explanation of what the example does
+        PS C:\> Set-License -UserUPN johndoe@contoso.onmicrosoft.com -License SPE_E5
+        Adds Microsoft 365 E5 (SPE_E5) license to user johndoe@contoso.onmicrosoft.com.
     .INPUTS
-        Inputs (if any)
+        None. You cannot pipe objects to Set-License.
     .OUTPUTS
-        Output (if any)
-    .NOTES
-        General notes
+        None. Set-License does not generate any output.
     #>
     [CmdletBinding()]
     param (

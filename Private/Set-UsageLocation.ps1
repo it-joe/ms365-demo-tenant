@@ -10,14 +10,12 @@ function Set-UsageLocation {
     .PARAMETER UsageLocation
         ISO 3166-1 alpha-2 country code.
     .EXAMPLE
-        PS C:\> <example usage>
-        Explanation of what the example does
+        PS C:\> Set-UsageLocation -UserUPN johndoe@contoso.onmicrosoft.com -UsageLocation DE
+        Assigns usage location for user johndoe@contoso.onmicrosoft.com.
     .INPUTS
-        Inputs (if any)
+        None. You cannot pipe objects to Set-UsageLocation.
     .OUTPUTS
-        Output (if any)
-    .NOTES
-        General notes
+        None. Set-UsageLocation does not generate any output.
     #>
     [CmdletBinding()]
     param (

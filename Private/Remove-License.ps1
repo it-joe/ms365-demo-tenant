@@ -1,20 +1,18 @@
 function Remove-License {
     <#
     .SYNOPSIS
-        Remove currently assigned licenses from user account.
+        Removes currently assigned licenses from user account.
     .DESCRIPTION
-        Remove currently assigned licenses from user account
+        Removes currently assigned licenses from user account.
     .PARAMETER UserUPN
         Specifies the ID (as UPN) of a user in Azure AD.
     .EXAMPLE
-        PS C:\> <example usage>
-        Explanation of what the example does
+        PS C:\> Remove-License -UserUPN johndoe@contoso.onmicrosoft.com
+        Removes currently assigned licenses from johndoe@contoso.onmicrosoft.com.
     .INPUTS
-        Inputs (if any)
+        None. You cannot pipe objects to Remove-License.
     .OUTPUTS
-        Output (if any)
-    .NOTES
-        General notes
+        None. Remove-License does not generate any output.
     #>
     [CmdletBinding()]
     param (
@@ -35,8 +33,4 @@ function Remove-License {
             continue
         }
     }
-    
-    <# $licenses = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicenses
-    $Licenses.RemoveLicenses =  (Get-AzureADSubscribedSku | Where-Object -Property SkuPartNumber -Value $planName -EQ).SkuID
-    Set-AzureADUserLicense -ObjectId $userUPN -AssignedLicenses $licenses #>
 }
