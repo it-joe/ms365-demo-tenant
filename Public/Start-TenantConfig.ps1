@@ -45,23 +45,25 @@ function Start-TenantConfig {
         $UserCount = '25'
     )
     
-    <# $Cred = Get-Credential
-    Connect-AzureAD -Credential $Cred #>
+    $Cred = Get-Credential
+    Connect-AzureAD -Credential $Cred
     
     #region Gather tenant details for later processing
     $OrgName = (Get-AzureADTenantDetail).DisplayName # The name of the organization
     #Endregion
-
+    
     # Create user accounts
     Add-User -UserCount $UserCount -OrgName $OrgName -UsageLocation $UsageLocation
-
+    
     # Assign licenses
     $UserUPNList = (Get-AzureADUser).UserPrincipalName # Get UPN of every user
-    
+
     foreach ($UserUPN in $UserUPNList) {  
         Set-UsageLocation -UserUPN $UserUPN -UsageLocation $UsageLocation # Assign usage location
         Remove-License -UserUPN $UserUPN # Remove currently assigned licenses from user account
         Set-License -UserUPN $UserUPN -License $License # Set specified license
     }
 
+    # Pre-provision OneDrive
+    Start-OneDriveProvisioning -Cred $Cred -OrgName $OrgName -UserUPNList $UserUPNList
 }
