@@ -9,11 +9,11 @@ Author: [it-joe](https://github.com/it-joe)
 https://docs.microsoft.com/en-us/microsoft-365/enterprise/lightweight-base-configuration-microsoft-365-enterprise#phase-1-create-your-office-365-e5-subscription
 * Add a Microsoft 365 E5 trial subscription:<br>
 https://docs.microsoft.com/en-us/microsoft-365/enterprise/lightweight-base-configuration-microsoft-365-enterprise#phase-3-add-a-microsoft-365-e5-trial-subscription
-* Install Azure Active Directory PowerShell for Graph:
+* Install the Azure Active Directory PowerShell for Graph:
     ``` PowerShell
     PS> Install-Module AzureAD
     ```
-* Install Microsoft Azure Active Directory Module for Windows PowerShell:
+* Install the Microsoft Azure Active Directory Module for Windows PowerShell:
     ``` PowerShell
     PS> Install-Module MSOnline
     ```
