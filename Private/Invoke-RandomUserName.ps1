@@ -24,8 +24,8 @@
         $UserCount        
     )
     
-    $ObjNames = @()
-    
+    $ObjNames = New-Object -TypeName 'System.Collections.Generic.List[System.Object]'
+
     # Start generating...
     1..$UserCount | ForEach-Object {
 
@@ -41,11 +41,13 @@
     
         $SurName = Get-Content "$PSScriptRoot\Surnames.txt" | Get-Random # Pick a surname
 
-        # Create object to save names
-        $ObjNames += [PSCustomObject]@{
+        $Row = [PSCustomObject]@{
             FirstName = $FirstName
             SurName   = $SurName
         }
+        
+        # Create object to save names
+        $ObjNames.Add($Row)
     }
     return $ObjNames
 }
